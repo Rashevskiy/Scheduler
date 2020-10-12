@@ -107,7 +107,8 @@ ShedulerSystem.UnityPackage имеет демо сцену где вы може�
  <em>AutoInvoke(Action CallBack, int checkPoint = 0)</em> который освобождает от таких вызовов, как <em>NextSkip()</em> или повторного
  <em>START()</em> для перезапуска условий, но первый <em>START()</em> все равно требуется.
 </p>
- Game(){
+
+
     public Condition myCondition;
 
     void Start(){

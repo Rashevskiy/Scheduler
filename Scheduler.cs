@@ -1,12 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace SсhedulerSystem
+namespace SchedulerSystem
 {
     /// <summary>
-    /// Sсheduler- Рассписание хранит две коллекции TimeConditions NoteCondition
+    /// Scheduler- Рассписание хранит две коллекции TimeConditions NoteCondition
     /// </summary>
-    public class Sсheduler
+    public class Scheduler
     {
         private int currentСheckPoint;
         private Dictionary<int, Condition> CheckPoints;
@@ -14,10 +14,10 @@ namespace SсhedulerSystem
         private Queue<Condition> WorkingConditions;
 
         /// <summary>
-        /// По умолчанию Sсheduler начинает СheckPoint c Нуля
+        /// По умолчанию Scheduler начинает СheckPoint c Нуля
         /// </summary>
         /// <param name="currentСheckPoint"></param>
-        public Sсheduler(int currentСheckPoint = 0)
+        public Scheduler(int currentСheckPoint = 0)
         {
             this.currentСheckPoint = currentСheckPoint;
             ConditionHandlers = new Dictionary<Condition, Action>();
@@ -26,7 +26,7 @@ namespace SсhedulerSystem
         }
 
         ///<summary>
-        /// Не добавит в Sсheduler если там уже есть похожее имя, или сама кондиция уже ранее добавлена
+        /// Не добавит в Scheduler если там уже есть похожее имя, или сама кондиция уже ранее добавлена
         /// !!!Внимание!!! Если функция определит коллизию в рассписании то возможны смещения на соседние Пойнты
         ///</summary>
         /// <param name="newCondition"> Возможны изменения данных аргумента</param>
@@ -37,7 +37,7 @@ namespace SсhedulerSystem
 
             if (newCondition.Name == "" || nameIsExist) // Имя пустое или уже существует в коллекции! Добавления не будет
             {
-                throw new Exception($"Condition {newCondition.Name} не может добавиться в Sсheduler! Имя не должно быть пустым, или уже такое существует");
+                throw new Exception($"Condition {newCondition.Name} не может добавиться в Scheduler! Имя не должно быть пустым, или уже такое существует");
             }
 
             if (newCondition.GetAllpriorityPoints().Count > 0)
@@ -50,10 +50,10 @@ namespace SсhedulerSystem
         }
 
         ///<summary>
-        ///Если аргументов нету, то будут вызываться все кондиции добавленные в Sсheduler.
+        ///Если аргументов нету, то будут вызываться все кондиции добавленные в Scheduler.
         ///Определяет есть ли среди бэйджиков рабочая кондиция, если есть то
         ///вызывает callBack привязанный к данной кондиции и делает авто START().
-        ///Если возвращает Null значит из бэйджиков пока не настало время, либо их вообще нету в Sсheduler.
+        ///Если возвращает Null значит из бэйджиков пока не настало время, либо их вообще нету в Scheduler.
         ///!!!Внимание!!! Всегда в приоритете на вызов будут кондиции совпадающие с PriorityPoints с currentСheckPoint.
         ///</summary>
         public Condition Invoke(params Condition[] badges)
@@ -110,7 +110,7 @@ namespace SсhedulerSystem
         }
 
         /// <summary>
-        /// Возвращает добавленные кондиции из Sсheduler по имени. Не чувствителен к регистру. Если аргументов нет то возращает все кондиции.
+        /// Возвращает добавленные кондиции из Scheduler по имени. Не чувствителен к регистру. Если аргументов нет то возращает все кондиции.
         /// </summary>
         /// <param name="conditionName"></param>
         /// <returns></returns>
@@ -165,7 +165,7 @@ namespace SсhedulerSystem
         }
 
         /// <summary>
-        /// Удаляет полностью и все следы кондиции из Sсheduler
+        /// Удаляет полностью и все следы кондиции из Scheduler
         /// </summary>
         /// <param name="condition"></param>
         public void Remove(Condition condition)

@@ -1,5 +1,5 @@
 # Scheduler
--Файл Scheduler.cs имеет два класса - Scheduler и Condition
+-Файл Scheduler.cs имеет два класса - Scheduler и Condition <br>
 -SchedulerSystem.UnityPackage имеет демо сцену где вы можете протестировать инструмент в классе ManagerUI с Scheduler
 
 <h1>Scheduler удобный расспорядок вызова функций, моя система кондиций</h1>

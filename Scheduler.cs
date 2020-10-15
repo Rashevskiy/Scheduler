@@ -4,7 +4,7 @@ using System.Collections.Generic;
 namespace SchedulerSystem
 {
     /// <summary>
-    /// Scheduler- Рассписание хранит две коллекции TimeConditions NoteCondition
+    /// Scheduler- Расспорядок кондиций
     /// </summary>
     public class Scheduler
     {

@@ -29,8 +29,8 @@
 <h4>Решение:</h4>
         Для этого я сделал класс Condition, вот основные его поля:
 <ol>
-   <li> таймер <em>int setedSeconds</em></li> 
-   <li> скипы <em>int setedSkips</em></li> 
+   <li> таймер <em>int setSeconds</em></li> 
+   <li> скипы <em>int setSkips</em></li> 
    <li> список чекПойнтов <em>List &ltint&gt checkPoints</em></li>
 </ol>
 <p>
@@ -54,8 +54,8 @@
 
     void Start(){
         myCondition = new Condition("Имя");
-        myCondition.setedSeconds = 120; // 2 минуты
-        myCondition.setedSkips = 5;
+        myCondition.setSeconds = 120; // 2 минуты
+        myCondition.setSkips = 5;
         myCondition.START(); // Отсчет пошел с самого старта игры
     }
 
@@ -84,8 +84,8 @@
 
     void Start(){
         myCondition = new Condition("имя",new List<int> { 1, 2, 5 }); // добавляем после обязательного имени, наш список лвлов
-        myCondition.setedSeconds = 120;
-        myCondition.setedSkips = 5;
+        myCondition.setSeconds = 120;
+        myCondition.setSkips = 5;
         myCondition.START();
     }
 
